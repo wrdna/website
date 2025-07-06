@@ -1,3 +1,36 @@
+.site-title {
+  position: relative;
+  display: inline-block;
+  font-weight: 800 !important;
+  font-size: 1.2rem !important;
+  line-height: 1.2 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 10s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
+
+
+
 .home-blurb {
   position: relative;
   display: flex;
@@ -10,7 +43,7 @@
   padding: 2rem 2rem 2.5rem;
   margin: 2.5rem auto;
   max-width: 1100px;
-  min-height: 280px; // 🔧 Ensures enough room for centering
+  min-height: 280px;
   overflow: hidden;
   text-align: center;
   backdrop-filter: blur(8px) saturate(180%);

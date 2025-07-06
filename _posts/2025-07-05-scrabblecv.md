@@ -127,7 +127,7 @@ private static List<Point> getTrueCorners(List<Detection> detections) {
 ```
 
 <figure id="fig-corner-detection" align="center">
-  <img src="corners_detected.jpg" alt="Detected corners" width="300"/>
+  <img src="/assets/posts/scrabblecv/corners_detected.jpg" alt="Detected corners" width="300"/>
   <figcaption style="font-size: 0.9em; color: #666;">Figure 0: Detected Scrabble board corners using YOLOv10-n.</figcaption>
 </figure>
 
@@ -141,7 +141,7 @@ Similar to before, squared euclidean distance can also be used to enforce a mini
 
 
 <figure id="fig-convex-quad" align="center">
-  <img src="convex_quad.png" alt="Convex quadrilateral" width="300"/>
+  <img src="/assets/posts/scrabblecv/convex_quad.png" alt="Convex quadrilateral" width="300"/>
   <figcaption style="font-size: 0.9em; color: #666;">Figure 1: Convex quadrilateral formed by board corners</figcaption>
 </figure>
 
@@ -212,7 +212,7 @@ def orient_board(input_image, corners):
 ```
 
 <figure id="fig-oriented-board" align="center">
-  <img src="oriented_board.jpg" alt="oriented board" width="300" height="300"/>
+  <img src="/assets/posts/scrabblecv/oriented_board.jpg" alt="oriented board" width="300" height="300"/>
   <figcaption style="font-size: 0.9em; color: #666;">Figure 2: Transformed image of board.</figcaption>
 </figure>
 
@@ -286,7 +286,7 @@ private static final String[] CLASS_NAMES = {
 ```
 
 <figure id="fig-classified-tiles" align="center">
-  <img src="classified_tiles.jpg" alt="classified tiles" width="300" height="300"/>
+  <img src="/assets/posts/scrabblecv/classified_tiles.jpg" alt="classified tiles" width="300" height="300"/>
   <figcaption style="font-size: 0.9em; color: #666;">Figure 3: Classified tiles</figcaption>
 </figure>
 
@@ -474,7 +474,7 @@ The Android application uses a single activity, with a [Nav Graph](https://devel
 
 The navigation graph is defined in the image below:
 <figure id="fig-nav-graph" align="center">
-  <img src="nav_graph.png" alt="navigation graph" width="500" height="500"/>
+  <img src="/assets/posts/scrabblecv/nav_graph.png" alt="navigation graph" width="500" height="500"/>
   <figcaption style="font-size: 0.9em; color: #666;">Figure 4: Navigation Graph</figcaption>
 </figure>
 
@@ -515,14 +515,14 @@ Over 400 images of a scrabble board were used to train. Images were taken from a
 Images are labelled with a small, tightly fitting bounding box around each of the corners.
 
 <figure id="fig-corner-no-tile-data" align="center">
-  <img src="corner_no_tile_data.png" alt="corners no tiles" width="300" height="300"/>
+  <img src="/assets/posts/scrabblecv/corner_no_tile_data.png" alt="corners no tiles" width="300" height="300"/>
   <figcaption style="font-size: 0.9em; color: #666;">Figure 5: Corner labels</figcaption>
 </figure>
 
 After initial training, the corner detections worked great. However, it was unable to detect corners when tiles were placed on the corner cells. This was due to having no examples in the training set with tiles on those cells.
 
 <figure id="fig-corner-tile-data" align="center">
-  <img src="corner_tile_data.png" alt="corners tiles" width="300" height="300"/>
+  <img src="/assets/posts/scrabblecv/corner_tile_data.png" alt="corners tiles" width="300" height="300"/>
   <figcaption style="font-size: 0.9em; color: #666;">Figure 6: Corner labels with tiles</figcaption>
 </figure>
 
@@ -570,12 +570,12 @@ crop_fraction: 0.0
 During training the loss successfully converged and generalized well to the validation set.
 
 <figure id="fig-corner-train-results" align="center">
-  <img src="corner_train_results.png" alt="corners tiles" width="1000" />
+  <img src="/assets/posts/scrabblecv/corner_train_results.png" alt="corners tiles" width="1000" />
   <figcaption style="font-size: 0.9em; color: #666;">Figure 7: Corner labels with tiles</figcaption>
 </figure>
 
 <figure id="fig-corner-validation" align="center">
-  <img src="corner_validation.jpg" alt="corner validation" width="1000" />
+  <img src="/assets/posts/scrabblecv/corner_validation.jpg" alt="corner validation" width="1000" />
   <figcaption style="font-size: 0.9em; color: #666;">Figure 8: Corner Validation</figcaption>
 </figure>
 
@@ -592,7 +592,7 @@ All tile orientations on the board were also captured from the 4 different rotat
 
 
 <figure id="board-labelling" align="center">
-  <img src="board_labelling.jpg" alt="board labelling" width="1000" />
+  <img src="/assets/posts/scrabblecv/board_labelling.png" alt="board labelling" width="1000" />
   <figcaption style="font-size: 0.9em; color: #666;">Figure 9: Board Labelling</figcaption>
 </figure>
 
@@ -617,7 +617,7 @@ augment = keras.Sequential(
 ```
 
 <figure id="fig-tile-train" align="center">
-  <img src="tile_train_imgs.png" alt="train tiles" width="400" />
+  <img src="/assets/posts/scrabblecv/tile_train_imgs.png" alt="train tiles" width="400" />
   <figcaption style="font-size: 0.9em; color: #666;">Figure 10: Tile training images</figcaption>
 </figure>
 
@@ -627,17 +627,17 @@ During training the loss successfully converged and generalized well to the vali
 
 
 <figure id="fig-tile-train-acc" align="center">
-  <img src="tile_train_acc.png" alt="tile training acc" width="500" />
+  <img src="/assets/posts/scrabblecv/tile_train_acc.png" alt="tile training acc" width="500" />
   <figcaption style="font-size: 0.9em; color: #666;">Figure 11: Tile Training Accuracy</figcaption>
 </figure>
 
 <figure id="fig-tiles-train-loss" align="center">
-  <img src="tile_train_loss.png" alt="tile training loss" width="500" />
+  <img src="/assets/posts/scrabblecv/tile_train_loss.png" alt="tile training loss" width="500" />
   <figcaption style="font-size: 0.9em; color: #666;">Figure 12: Tile Training Loss</figcaption>
 </figure>
 
 <figure id="fig-tile-val-imgs" align="center">
-  <img src="tile_val_imgs.png" alt="tile validation images" width="500" />
+  <img src="/assets/posts/scrabblecv/tile_val_imgs.png" alt="tile validation images" width="500" />
   <figcaption style="font-size: 0.9em; color: #666;">Figure 13: Tile Validation Images</figcaption>
 </figure>
 
@@ -647,7 +647,7 @@ During training the loss successfully converged and generalized well to the vali
 Here is a gif showcasing the app. 
 
 <figure id="gameplay" align="center">
-  <img src="gameplay.gif" alt="gameplay" width="500" />
+  <img src="/assets/posts/scrabblecv/gameplay.gif" alt="gameplay" width="500" />
   <figcaption style="font-size: 0.9em; color: #666;">Figure 14: Gameplay</figcaption>
 </figure>
 

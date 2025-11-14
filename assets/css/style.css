@@ -168,3 +168,17 @@
   user-select: none;
 }
 
+.resume-link {
+  display: inline-block;
+  color: var(--text-color, #fff);
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.resume-link:hover {
+  opacity: 0.8;
+}
+
+

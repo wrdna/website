@@ -173,6 +173,7 @@
   color: var(--text-color, #fff);
   font-weight: 500;
   font-size: 1.6rem;
+  text
   letter-spacing: 0.02em;
   transition: opacity 0.2s ease;
 }

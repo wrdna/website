@@ -105,6 +105,29 @@
   text-shadow: 0 0 3px rgba(118, 110, 200, 0.35);
 }
 
+/* Override Chirpy's preview-img only in the home blurb */
+.home-blurb-inner .preview-img {
+  position: static !important;
+  width: auto !important;
+  max-width: 420px;          /* adjust as you like */
+  margin: 0 auto 1.5rem;     /* center above text */
+  padding: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  aspect-ratio: auto !important;
+}
+
+/* Make the image fill its box without the forced 16:9 behavior */
+.home-blurb-inner .preview-img img {
+  position: static !important;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.75rem;    /* matches your glass card rounding */
+}
+
+
 /* ---- Divider line between blurb and contact ---- */
 .divider {
   width: 60%;
@@ -142,18 +165,15 @@
   transition: filter 160ms ease, opacity 160ms ease, transform 160ms ease;
 }
 
-.social-link.link-shimmer {
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-image: linear-gradient(
-    120deg,
-    rgba(255,255,255,0.7) 0%,
-    rgba(255,255,255,0.95) 50%,
-    rgba(255,255,255,0.75) 100%
-  );
-  background-size: 200% auto;
+.social-link,
+.resume-link {
+  transition: opacity 180ms ease, text-shadow 180ms ease;
+}
+
+.social-link:hover,
+.resume-link:hover {
+  text-shadow: 0 0 8px rgba(200, 190, 255, 0.75);
+  opacity: 1;
 }
 
 .social-link:hover,
@@ -163,23 +183,27 @@
   transform: translateY(-0.5px);
 }
 
+/* faster shimmer on hover */
+.social-link.link-shimmer:hover,
+.social-link.link-shimmer:focus-visible {
+  animation-duration: 3s;
+}
+
 .sep {
   color: rgba(255, 255, 255, 0.4);
   user-select: none;
 }
 
+/* ---- Resume link: slightly larger + same shimmer ---- */
 .resume-link {
   display: inline-block;
-  color: var(--text-color, #fff);
   font-weight: 500;
-  font-size: 1.6rem;
-  text
+  font-size: 1.45rem;   /* slightly larger */
   letter-spacing: 0.02em;
-  transition: opacity 0.2s ease;
+  text-decoration: none;
 }
 
-.resume-link:hover {
-  opacity: 0.8;
+.resume-link:hover,
+.resume-link:focus-visible {
+  opacity: 1;
 }
-
-
